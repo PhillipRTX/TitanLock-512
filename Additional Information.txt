@@ -1,0 +1,20 @@
+TitanLock-512 is a custom-built, modular block cipher operating on 512-bit blocks with 512-bit keys. 
+Designed as an experimental encryption suite, it blends modern cryptographic practices with bespoke transformation logic, key scheduling, message authentication, and flexible password-based encryption.
+This tool is intended for educational, research, and exploratory purposes.
+
+  512-bit block size — 4× larger than AES
+  Custom round transformation logic — bitwise rotations, XOR diffusion, nonlinear mutation
+  CBC Mode encryption
+  PKCS#7-style padding
+  MAC generation via SHA-512 (EVP digest API)
+  PBKDF2-based key derivation — password-secured with random salt
+  Random IV and salt handling
+  CLI interface for file-based encryption
+  OpenSSL 3.0+ compatible
+
+Compile from Source
+gcc titanlock512.c -o titanlock512 -lcrypto
+
+How to use 
+./titanlock512 -e input.txt encrypted.bin
+
